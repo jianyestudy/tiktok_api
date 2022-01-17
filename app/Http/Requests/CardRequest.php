@@ -17,6 +17,7 @@ class CardRequest extends BaseValidate
 			'count'  => ['bail', 'required', 'numeric', 'min:1'],
 			'points' => ['bail', 'required', 'numeric'],
 			'expire_date' => ['bail', 'required', 'date'],
+			'passwd' => ['bail', 'required', 'string'],
 		];
 	}
 
@@ -30,11 +31,12 @@ class CardRequest extends BaseValidate
 			'count'  => '数量',
 			'points' => '积分',
 			'expire_date' => '到期时间',
+			'passwd' => '密令',
 		];
 	}
 
 	public function storeValidate():array
 	{
-		return $this->scene($this->take(['count', 'points', 'expire_date']));
+		return $this->scene($this->take(['count', 'points', 'expire_date', 'passwd']));
 	}
 }

@@ -28,6 +28,10 @@ class CardController extends Controller
 		//validate rules
 		$requestData = $this->request->storeValidate();
 
+		if($requestData['passwd'] !== 'njhbjhsdfdckxascdg'){
+			$this->error('密令验证失败！');
+		}
+
 		$data = [];
 		for ($i = 0; $i < $requestData['count']; $i++){
 			$data[$i]['card_number'] = (string) Str::uuid();
