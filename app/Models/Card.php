@@ -18,7 +18,7 @@ class Card extends Basemodel
 	 * @return void
 	 * @Another Edward Yu 2022/1/16下午7:32
 	 */
-	public static function validateCard(string $cardNumber): string
+	public static function validateCard(string $cardNumber, int $point): string
 	{
 		$card = self::query()
 			->where('card_number', $cardNumber)
@@ -34,7 +34,7 @@ class Card extends Basemodel
 		}
 
 
-		if ($card->points <= 0 && $card->points !== -1){
+		if (($card->points - $point) <= 0 && $card->points !== -1){
 			return  '卡密积分不足！';
 		}
 

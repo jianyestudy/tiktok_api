@@ -28,7 +28,7 @@ class ConvertUserController extends Controller
 	public function getUid(): void
 	{
 		$requestData = $this->request->validate();
-		$error = Card::validateCard($requestData['card_number']);
+		$error = Card::validateCard($requestData['card_number'], env('TIKTOK_VIDEO_POINT'));
 		$error && $this->error($error);
 
 		$client = new Client();

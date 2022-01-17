@@ -29,7 +29,7 @@ class QueryPlayController extends Controller
 		$requestData = $this->request->queryPlayValidate();
 
 		//验证卡密
-		$error = Card::validateCard($requestData['card_number']);
+		$error = Card::validateCard($requestData['card_number'], env('TIKTOK_VIDEO_POINT'));
 		$error && $this->error($error);
 
 		$client = new Client();
