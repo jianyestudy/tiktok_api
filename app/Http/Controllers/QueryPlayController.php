@@ -52,7 +52,7 @@ class QueryPlayController extends Controller
 			$this->error($e instanceof ResultException ? $e->getMessage(): '请求失败！请联系管理员');
 		}
 
-		//减除积分
+		//减除积分g
 		Card::reducePoint($requestData['card_number'], env('TIKTOK_VIDEO_POINT'));
 
 		//返回结果

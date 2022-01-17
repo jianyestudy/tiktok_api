@@ -25,25 +25,24 @@ class Card extends Basemodel
 			->first();
 
 		if (!$card) {
-			$error =  '卡密不存在！';
+			return '卡密不存在！';
 		}
 
 
 		if (strtotime($card->expire_date) < time()){
-			$error =  '卡密已过期！';
+			return  '卡密已过期！';
 		}
 
 
 		if ($card->points <= 0 && $card->points !== -1){
-			$error =  '卡密积分不足！';
+			return  '卡密积分不足！';
 		}
-
-		return $error ?? '';
 	}
 
 
 	/**
 	 * @param string $cardNumber
+	 * @param int $point
 	 * @Another Edward Yu 2022/1/17上午12:45
 	 */
 	public static function reducePoint(string $cardNumber, int $point): void
