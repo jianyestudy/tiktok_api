@@ -37,6 +37,8 @@ class Card extends Basemodel
 		if ($card->points <= 0 && $card->points !== -1){
 			return  '卡密积分不足！';
 		}
+
+		return '';
 	}
 
 
