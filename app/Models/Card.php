@@ -46,7 +46,7 @@ class Card extends Basemodel
 	 * @param string $cardNumber
 	 * @Another Edward Yu 2022/1/17上午12:45
 	 */
-	public static function reducePoint(string $cardNumber): void
+	public static function reducePoint(string $cardNumber, int $point): void
 	{
 		//减除积分
 		$card = self::query()
@@ -61,7 +61,7 @@ class Card extends Basemodel
 			return;
 		}
 
-		$card->points -= env('TIKTOK_USER_POINT');
+		$card->points -= $point;
 		$card->save();
 	}
 }

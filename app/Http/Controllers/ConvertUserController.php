@@ -52,7 +52,7 @@ class ConvertUserController extends Controller
 		}
 
 		//减除积分
-		Card::reducePoint($requestData['card_number']);
+		Card::reducePoint($requestData['card_number'], env('TIKTOK_USER_POINT'));
 
 
 		//返回结果
