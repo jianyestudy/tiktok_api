@@ -35,7 +35,7 @@ class Card extends BaseModel
 		}
 
 
-		if (($card->points - $point) <= 0 && $card->points !== -1){
+		if (($card->points - $point) < 0 && $card->points !== -1){
 			return  '卡密积分不足！';
 		}
 
