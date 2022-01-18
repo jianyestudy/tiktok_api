@@ -13,13 +13,14 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
+        "ext-json": "*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "qcs/laravel-api": "^3.0",
-      "ext-json": "*"
+        "ssovit/tiktok-api": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

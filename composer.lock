@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9ea9fefdc4c897fde7e98df83ab61c2",
+    "content-hash": "e20171e5ab3a0977dd5614cf05190f1f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2905,6 +2905,58 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "ssovit/tiktok-api",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ssovit/TikTok-API-PHP.git",
+                "reference": "bce0ed8b417ab3a09d3c41cc75c3a654ef90c6d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ssovit/TikTok-API-PHP/zipball/bce0ed8b417ab3a09d3c41cc75c3a654ef90c6d8",
+                "reference": "bce0ed8b417ab3a09d3c41cc75c3a654ef90c6d8",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sovit\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sovit Tamrakar",
+                    "email": "sovit.tamrakar@gmail.com",
+                    "homepage": "https://github.com/ssovit/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Unofficial TikTok API for PHP",
+            "homepage": "https://github.com/ssovit/TikTok-API-PHP",
+            "keywords": [
+                "TikTok ",
+                "tiktok-api",
+                "tiktok-scraper"
+            ],
+            "support": {
+                "email": "sovit.tamrakar@gmail.com",
+                "issues": "https://github.com/ssovit/TikTok-API-PHP/issues",
+                "source": "https://github.com/ssovit/TikTok-API-PHP"
+            },
+            "time": "2021-05-28T15:32:11+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8390,7 +8442,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

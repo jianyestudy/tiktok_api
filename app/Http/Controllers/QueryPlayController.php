@@ -8,6 +8,7 @@ use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 use QCS\LaravelApi\Exceptions\ResultException;
+use Sovit\TikTok\Api;
 
 class QueryPlayController extends Controller
 {
@@ -58,4 +59,23 @@ class QueryPlayController extends Controller
 		//返回结果
 		$this->success($result['data']);
 	}
+
+
+	 public function test()
+	 {
+		 $config = [
+			 "user-agent"		=> 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36', // Valid desktop browser HTTP User Agent
+			 "proxy-host"		=> false,
+			 "proxy-port"		=> false,
+			 "proxy-username"	=> false,
+			 "proxy-password"	=> false,
+			 "cache-timeout"		=> 3600, // 1 hours cache timeout
+			 "cookie_file"		=> sys_get_temp_dir() . 'tiktok.txt', // cookie file path
+			 "nwm_endpoint"		=> "https://my-api.example.com", // private api endpoint
+			 "api_key"		=> "API_KEY", // see below on how to get API key
+		 ];
+		 $api=new Api(array($config));
+		 
+		 dd($api->getUser('zoe980304'));
+	 }
 }

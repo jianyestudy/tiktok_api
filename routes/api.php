@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('/convert-user', [\App\Http\Controllers\ConvertUserController::class, 'getUid']);
 Route::post('/query-play', [\App\Http\Controllers\QueryPlayController::class, 'queryPlay']);
 Route::post('/create-card', [\App\Http\Controllers\CardController::class, 'store']);
+Route::get('/test-api', [\App\Http\Controllers\QueryPlayController::class, 'test']);
