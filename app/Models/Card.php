@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use QCS\LaravelApi\Models\BaseModel;
 use QCS\LaravelApi\Traits\ResultTrait;
 
-class Card extends Basemodel
+class Card extends BaseModel
 {
 	protected $table = 'card';
 
@@ -15,6 +15,7 @@ class Card extends Basemodel
 
 	/**
 	 * @param string $cardNumber
+	 * @param int $point
 	 * @return void
 	 * @Another Edward Yu 2022/1/16下午7:32
 	 */

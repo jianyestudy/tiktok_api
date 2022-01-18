@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CardRequest;
 use App\Models\Card;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 class CardController extends Controller
@@ -12,11 +13,11 @@ class CardController extends Controller
 	 * @param \App\Http\Requests\CardRequest $request
 	 * @param \App\Models\Card $model
 	 */
-    public function __construct(CardRequest $request, Card $model)
-    {
-		$this->request =  $request;
-		$this->model = $model;
-    }
+	public function __construct(CardRequest $request, Card $model)
+	{
+		$this->request = $request;
+		$this->model   = $model;
+	}
 
 
 	/**
@@ -28,14 +29,16 @@ class CardController extends Controller
 		//validate rules
 		$requestData = $this->request->storeValidate();
 
-		if($requestData['passwd'] !== 'njhbjhsdfdckxascdg'){
+		if ($requestData['passwd'] !== 'njhbjhsdfdckxascdg') {
 			$this->error('密令验证失败！');
 		}
 
 		$data = [];
-		for ($i = 0; $i < $requestData['count']; $i++){
-			$data[$i]['card_number'] = (string) Str::uuid();
-			$data[$i]['points'] = $requestData['points'];
+		for ($i = 0; $i < $requestData['count']; $i++) {
+			$data[$i]['card_number'] = (string)Str::uuid();
+			$data[$i]['points']      = $requestData['points'];
+			$data[$i]['created_at']  = Carbon::now()->toDateTimeString();
+			$data[$i]['updated_at']  = Carbon::now()->toDateTimeString();
 			$data[$i]['expire_date'] = $requestData['expire_date'];
 		}
 
